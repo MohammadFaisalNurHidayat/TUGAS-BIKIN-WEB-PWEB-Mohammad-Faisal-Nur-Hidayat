@@ -11,6 +11,7 @@ h1 {
     margin-top: 20px;
 }
 
+/* Efek Glitch */
 @keyframes glitch {
     0% { text-shadow: 2px 2px red; }
     25% { text-shadow: -2px -2px blue; }
