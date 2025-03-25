@@ -1,18 +1,20 @@
 let player;
 let clickCount = 0;
 
-player = new YT.Player('youtubePlayer', {
-    height: '0',
-    width: '0',
-    videoId: '60ItHLz5WEA', 
-    playerVars: { 'autoplay': 0, 'controls': 0 },
-    events: {
-        'onReady': onPlayerReady
-    }
-});
-
+// 🔹 Fungsi yang dipanggil otomatis oleh YouTube API setelah API siap
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('youtubePlayer', {
+        height: '0',  // Sembunyikan video
+        width: '0',
+        videoId: '60ItHLz5WEA', // ID YouTube yang ingin diputar
+        playerVars: { 'autoplay': 0, 'controls': 0 },
+        events: {
+            'onReady': onPlayerReady
+        }
+    });
 }
 
+// 🔹 Fungsi untuk menambahkan event listener setelah YouTube Player siap
 function onPlayerReady(event) {
     document.getElementById("playYoutube").addEventListener("click", function () {
         player.playVideo();
@@ -23,8 +25,9 @@ function onPlayerReady(event) {
     });
 }
 
+// 🔹 Event listener setelah halaman siap
 document.addEventListener("DOMContentLoaded", function () {
-    const memes = ["nerd.jpg", "sigma.jpg"];
+    const memes = ["images/nerd.jpg", "images/sigma.jpg"];
     const texts = ["Skill Issue!", "Sigma Mindset!"];
     const memeImage = document.getElementById("memeImage");
     const button = document.getElementById("clickButton");
@@ -36,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const sendChat = document.getElementById("sendChat");
     const statusText = document.getElementById("statusText");
 
-    
+    // 🔊 Text-to-Speech
     function speak(text) {
         let speech = new SpeechSynthesisUtterance(text);
         speech.lang = "id-ID";
@@ -44,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
         window.speechSynthesis.speak(speech);
     }
 
-    
+    // 🎲 Event tombol ditekan (Random Meme + Suara + Hitung Klik)
     button.addEventListener("click", function () {
         if (confirm("Yakin mau klik?")) {
             let randomIndex = Math.floor(Math.random() * memes.length);
@@ -53,18 +56,18 @@ document.addEventListener("DOMContentLoaded", function () {
             let randomText = texts[randomIndex];
             speak(randomText);
             statusText.innerText = randomText;
-            
+
             clickCount++;
             document.getElementById("clickCount").innerText = clickCount;
         }
     });
 
-    
+    // 🌙 Mode Gelap & Terang
     themeButton.addEventListener("click", function () {
         document.body.classList.toggle("dark-mode");
     });
 
-    
+    // 🤖 Chatbot Sederhana
     chatbotButton.addEventListener("click", function () {
         chatbot.style.display = chatbot.style.display === "none" ? "block" : "none";
     });
