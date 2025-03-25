@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const memes = ["nerd.jpg", "sigma.jpg"];
+    const memes = ["images/nerd.jpg", "images/sigma.jpg"];
     const texts = ["Skill Issue!", "Sigma Mindset!"];
     const memeImage = document.getElementById("memeImage");
     const button = document.getElementById("clickButton");
