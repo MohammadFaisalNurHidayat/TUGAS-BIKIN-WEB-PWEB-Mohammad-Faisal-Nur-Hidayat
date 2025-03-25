@@ -3,17 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Itulah 4 trio</title>
+    <title>Ultimate Meme Generator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1 class="glitch-text">COBA TEKAN TOMBOL ITU</h1>
+    <h1 class="glitch-text" id="typewriter"></h1>
+
     <div class="container">
-        <p>LU SESUDAH BEFORE TEKAN TOMBOL.</p>
-       <img id="memeImage" src="images/nerd.jpg" alt="Meme image">
+        <p id="statusText">LU SEBELUM TEKAN TOMBOL.</p>
+        <img id="memeImage" src="nerd.jpg" alt="Meme image">
         <button id="clickButton">KLIK YGY</button>
+        <p>Jumlah Klik: <span id="clickCount">0</span></p>
     </div>
+
+    <button id="toggleTheme">🌙 Mode Gelap</button>
+    <button id="toggleMusic">🎵 Play BGM</button>
+    <button id="chatbotButton">💬 Buka Chatbot</button>
+
+    <div id="chatbot">
+        <div id="chatbotMessages"></div>
+        <input type="text" id="chatbotInput" placeholder="Tanya sesuatu...">
+        <button id="sendChat">Kirim</button>
+    </div>
+
     <p class="footer">© 2025 MENUJU INDONESIA BRAINROT</p>
+
+    <audio id="bgMusic" src="sounds/bgm.mp3" loop></audio>
     <script src="script.js"></script>
 </body>
 </html>
