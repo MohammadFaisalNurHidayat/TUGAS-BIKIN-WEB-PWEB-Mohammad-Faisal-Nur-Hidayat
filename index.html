@@ -3,21 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ultimate Meme Generator</title>
+    <title>Ultimate Meme & Music Web</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <h1 class="glitch-text" id="typewriter"></h1>
 
     <div class="container">
         <p id="statusText">LU SEBELUM TEKAN TOMBOL.</p>
-        <img id="memeImage" src="images/nerd.jpg" alt="Meme image">
+       <img id="memeImage" src="images/nerd.jpg" alt="Meme image">
         <button id="clickButton">KLIK YGY</button>
         <p>Jumlah Klik: <span id="clickCount">0</span></p>
     </div>
 
     <button id="toggleTheme">🌙 Mode Gelap</button>
-    <button id="toggleMusic">🎵 Play BGM</button>
+    <button id="playYoutube">▶️ Play YouTube Music</button>
+    <button id="pauseYoutube">⏸ Pause Music</button>
     <button id="chatbotButton">💬 Buka Chatbot</button>
 
     <div id="chatbot">
@@ -26,9 +28,11 @@
         <button id="sendChat">Kirim</button>
     </div>
 
+    <div id="youtubePlayer"></div> <!-- Pemutar YouTube (Tersembunyi) -->
+
     <p class="footer">© 2025 MENUJU INDONESIA BRAINROT</p>
 
-    <audio id="bgMusic" src="sounds/bgm.mp3" loop></audio>
+    <script src="https://www.youtube.com/iframe_api"></script>
     <script src="script.js"></script>
 </body>
 </html>
