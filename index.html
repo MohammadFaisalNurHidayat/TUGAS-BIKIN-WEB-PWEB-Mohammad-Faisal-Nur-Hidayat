@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YANG YTTA AJA</title>
+    <title>AKU MURKA</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1 class="glitch-text" id="typewriter"></h1>
+    <h1 class="glitch-text">TEKAN TOMBOL UNTUK PLAY MUSIK 🎵</h1>
 
     <div class="container">
-        <p id="statusText">LU SEBELUM TEKAN TOMBOL.</p>
-       <img id="memeImage" src="images/nerd.jpg" alt="Meme image">
-        <button id="clickButton">KLIK YGY</button>
-        <p>Jumlah Klik: <span id="clickCount">0</span></p>
+        <p id="statusText">Selamat datang di web musik interaktif!</p>
+        <p id="quote">💡 Klik tombol untuk mendapatkan quotes!</p>
+        <button id="newQuote">🔄 Get Quote</button>
     </div>
 
     <button id="toggleTheme">🌙 Mode Gelap</button>
@@ -28,11 +27,14 @@
         <button id="sendChat">Kirim</button>
     </div>
 
-    <div id="youtubePlayer"></div> <!-- Pemutar YouTube (Tersembunyi) -->
+    <div id="youtubePlayer"></div> 
 
-    <p class="footer">© 2025 MENUJU INDONESIA BRAINROT</p>
+    <p id="clock">⏳ Waktu: --:--:--</p>
+
+    <canvas id="matrixCanvas"></canvas> 
 
     <script src="https://www.youtube.com/iframe_api"></script>
     <script src="script.js"></script>
+
 </body>
 </html>
