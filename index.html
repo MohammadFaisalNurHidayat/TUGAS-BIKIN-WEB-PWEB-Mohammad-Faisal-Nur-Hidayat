@@ -3,36 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ultimate Music & AI Chatbot</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Web SIGMA</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <h1 class="glitch-text">TEKAN TOMBOL UNTUK PLAY MUSIK 🎵</h1>
-
     <div class="container">
-        <p id="statusText">Selamat datang di web musik interaktif!</p>
-        <p id="quote">💡 Klik tombol untuk mendapatkan quotes!</p>
-        <button id="newQuote">🔄 Get Quote</button>
+        <h1>Selamat Datang di Web SIGMA</h1>
+        <p id="clock">⏳ Jam: 00:00:00</p>
+        <button id="clickMe">Klik Aku YGY!</button>
+        <button id="toggleMode">🌙 Mode Gelap</button>
+        <p id="message"></p>
     </div>
 
-    <button id="toggleTheme">🌙 Mode Gelap</button>
-    <button id="playYoutube">▶️ Play YouTube Music</button>
-    <button id="pauseYoutube">⏸ Pause Music</button>
-    <button id="chatbotButton">💬 Buka Chatbot</button>
+    
+    <div id="toast" class="toast">Notifikasi!</div>
 
-    <div id="chatbot">
-        <div id="chatbotMessages"></div>
-        <input type="text" id="chatbotInput" placeholder="Tanya sesuatu...">
-        <button id="sendChat">Kirim</button>
-    </div>
-
-    <div id="youtubePlayer"></div> <!-- Pemutar YouTube (Tersembunyi) -->
-    <p id="clock">⏳ Waktu: --:--:--</p>
-    <canvas id="matrixCanvas"></canvas> <!-- Efek Hacker Mode -->
-
-    <script src="https://www.youtube.com/iframe_api"></script>
     <script src="script.js"></script>
-
 </body>
 </html>
