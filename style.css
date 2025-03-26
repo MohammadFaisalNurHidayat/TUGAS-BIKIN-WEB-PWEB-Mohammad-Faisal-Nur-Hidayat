@@ -1,59 +1,82 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f0f0f0;
+/* Reset */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body */
+body {
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    text-align: center;
     transition: background 0.3s, color 0.3s;
 }
 
-
+/* Mode Gelap */
 .dark-mode {
-    background-color: #1e1e1e;
+    background: linear-gradient(to right, #232526, #414345);
     color: white;
 }
 
+/* Header */
+header {
+    background: url('images/header.jpg') no-repeat center center/cover;
+    padding: 60px;
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+/* Container */
 .container {
-    margin-top: 50px;
+    margin-top: 30px;
     padding: 20px;
     background: white;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     width: 50%;
     margin-left: auto;
     margin-right: auto;
     transition: background 0.3s;
 }
 
+/* Mode Gelap untuk Container */
 .dark-mode .container {
     background: #333;
 }
 
-
+/* Tombol */
 button {
-    padding: 10px 20px;
+    padding: 12px 20px;
     font-size: 18px;
     border: none;
-    background-color: #007bff;
+    background: #ff5e78;
     color: white;
     border-radius: 5px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: transform 0.2s, background 0.3s;
     margin: 10px;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background: #ff385c;
+    transform: scale(1.1);
 }
 
-#message {
-    margin-top: 20px;
-    font-size: 20px;
-    color: #333;
+/* Animasi Tombol */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+button {
+    animation: bounce 2s infinite;
 }
 
-
+/* Toast Notification */
 .toast {
     visibility: hidden;
     min-width: 250px;
@@ -74,7 +97,7 @@ button:hover {
     animation: fadeInOut 3s;
 }
 
-
+/* Animasi */
 @keyframes fadeInOut {
     0%, 100% { opacity: 0; }
     10%, 90% { opacity: 1; }
