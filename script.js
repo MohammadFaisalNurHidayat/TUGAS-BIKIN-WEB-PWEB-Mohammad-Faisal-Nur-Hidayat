@@ -58,6 +58,43 @@ document.addEventListener("keydown", function (event) {
     }
 });
 
+// 🔹 Chatbot AI Sederhana
+const chatbotButton = document.getElementById("chatbotButton");
+const chatbot = document.getElementById("chatbot");
+const chatbotMessages = document.getElementById("chatbotMessages");
+const chatbotInput = document.getElementById("chatbotInput");
+const sendChat = document.getElementById("sendChat");
+
+chatbotButton.addEventListener("click", function () {
+    chatbot.style.display = chatbot.style.display === "none" ? "block" : "none";
+});
+
+sendChat.addEventListener("click", function () {
+    let userInput = chatbotInput.value.trim();
+    if (userInput === "") return;
+
+    chatbotMessages.innerHTML += `<p><strong>Kamu:</strong> ${userInput}</p>`;
+
+    let botReply = chatbotAI(userInput);
+    chatbotMessages.innerHTML += `<p><strong>Bot:</strong> ${botReply}</p>`;
+
+    chatbotInput.value = "";
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+});
+
+// 🔹 Respon AI Sederhana
+function chatbotAI(input) {
+    let responses = {
+        "halo": "Halo! Apa kabar? 😊",
+        "siapa kamu": "Saya adalah chatbot AI sederhana!",
+        "apa kabar": "Saya selalu baik! Bagaimana dengan kamu?",
+        "terima kasih": "Sama-sama! 😃",
+        "siapa presiden indonesia": "Saat ini Presiden Indonesia adalah Joko Widodo."
+    };
+
+    return responses[input.toLowerCase()] || "Maaf, saya tidak mengerti pertanyaanmu. 😅";
+}
+
 // 🔹 Matrix Effect
 function startMatrixEffect() {
     const canvas = document.getElementById("matrixCanvas");
