@@ -1,129 +1,28 @@
-let player;
 
-// 🔹 YouTube API Player
-function onYouTubeIframeAPIReady() {
-    player = new YT.Player('youtubePlayer', {
-        height: '0',
-        width: '0',
-        videoId: '60ItHLz5WEA',
-        playerVars: { 'autoplay': 0, 'controls': 0, 'playsinline': 1 },
-        events: {
-            'onReady': onPlayerReady
-        }
-    });
-}
-
-function onPlayerReady(event) {
-    document.getElementById("playYoutube").addEventListener("click", function () {
-        player.playVideo();
-    });
-
-    document.getElementById("pauseYoutube").addEventListener("click", function () {
-        player.pauseVideo();
-    });
-}
-
-// 🔹 Quotes Generator
-const quotes = [
-    "🚀 Keberhasilan adalah hasil dari kerja keras dan doa.",
-    "🔥 Jangan pernah menyerah pada impianmu!",
-    "💡 Setiap kesalahan adalah pelajaran untuk masa depan.",
-    "🎯 Lakukan yang terbaik, hasil akan mengikuti."
-];
-
-document.getElementById("newQuote").addEventListener("click", function () {
-    let randomIndex = Math.floor(Math.random() * quotes.length);
-    document.getElementById("quote").innerText = quotes[randomIndex];
-});
-
-// 🔹 Mode Gelap
-document.getElementById("toggleTheme").addEventListener("click", function () {
-    document.body.classList.toggle("dark-mode");
-});
-
-// 🔹 Clock
 function updateClock() {
-    let now = new Date();
-    let timeString = now.toLocaleTimeString();
-    document.getElementById("clock").innerText = `⏳ Waktu: ${timeString}`;
+    const now = new Date();
+    const timeString = now.toLocaleTimeString();
+    document.getElementById("clock").textContent = `⏳ Jam: ${timeString}`;
 }
 setInterval(updateClock, 1000);
 
-// 🔹 Mode Hacker (Shift + Enter)
-document.addEventListener("keydown", function (event) {
-    if (event.shiftKey && event.key === "Enter") {
-        let matrixCanvas = document.getElementById("matrixCanvas");
-        matrixCanvas.style.display = "block";
-        startMatrixEffect();
-    }
+
+document.getElementById("clickMe").addEventListener("click", function() {
+    document.getElementById("message").textContent = "Tombol telah diklik!";
+    showToast("Anda menekan tombol!");
 });
 
-// 🔹 Chatbot AI Sederhana
-const chatbotButton = document.getElementById("chatbotButton");
-const chatbot = document.getElementById("chatbot");
-const chatbotMessages = document.getElementById("chatbotMessages");
-const chatbotInput = document.getElementById("chatbotInput");
-const sendChat = document.getElementById("sendChat");
 
-chatbotButton.addEventListener("click", function () {
-    chatbot.style.display = chatbot.style.display === "none" ? "block" : "none";
+document.getElementById("toggleMode").addEventListener("click", function() {
+    document.body.classList.toggle("dark-mode");
+    const modeText = document.body.classList.contains("dark-mode") ? "☀️ Mode Terang" : "🌙 Mode Gelap";
+    this.textContent = modeText;
 });
 
-sendChat.addEventListener("click", function () {
-    let userInput = chatbotInput.value.trim();
-    if (userInput === "") return;
 
-    chatbotMessages.innerHTML += `<p><strong>Kamu:</strong> ${userInput}</p>`;
-
-    let botReply = chatbotAI(userInput);
-    chatbotMessages.innerHTML += `<p><strong>Bot:</strong> ${botReply}</p>`;
-
-    chatbotInput.value = "";
-    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-});
-
-// 🔹 Respon AI Sederhana
-function chatbotAI(input) {
-    let responses = {
-        "halo": "Halo! Apa kabar? 😊",
-        "siapa kamu": "Saya adalah chatbot AI sederhana!",
-        "apa kabar": "Saya selalu baik! Bagaimana dengan kamu?",
-        "terima kasih": "Sama-sama! 😃",
-        "siapa presiden indonesia": "Saat ini Presiden Indonesia adalah Joko Widodo."
-    };
-
-    return responses[input.toLowerCase()] || "Maaf, saya tidak mengerti pertanyaanmu. 😅";
-}
-
-// 🔹 Matrix Effect
-function startMatrixEffect() {
-    const canvas = document.getElementById("matrixCanvas");
-    const ctx = canvas.getContext("2d");
-    
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    const fontSize = 16;
-    const columns = canvas.width / fontSize;
-    const drops = Array.from({ length: columns }).fill(1);
-
-    function draw() {
-        ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-        
-        ctx.fillStyle = "#0F0";
-        ctx.font = `${fontSize}px monospace`;
-
-        for (let i = 0; i < drops.length; i++) {
-            let text = letters.charAt(Math.floor(Math.random() * letters.length));
-            ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-            
-            if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-                drops[i] = 0;
-            }
-            drops[i]++;
-        }
-    }
-    setInterval(draw, 50);
+function showToast(message) {
+    const toast = document.getElementById("toast");
+    toast.textContent = message;
+    toast.classList.add("show");
+    setTimeout(() => toast.classList.remove("show"), 3000);
 }
