@@ -1,104 +1,78 @@
-/* Import Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
-/* Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
-/* Body */
-body {
-    background: linear-gradient(to right, #ff9a9e, #fad0c4);
-    text-align: center;
-    transition: background 0.3s, color 0.3s;
-}
-
-/* Mode Gelap */
-.dark-mode {
-    background: linear-gradient(to right, #232526, #414345);
-    color: white;
-}
-
-/* Header dengan Gambar dari Unsplash */
-header {
-    background: url('https://source.unsplash.com/1600x600/?nature,technology') no-repeat center center/cover;
-    padding: 60px;
-    color: white;
-    font-size: 26px;
-    font-weight: bold;
-}
-
-/* Container */
-.container {
-    margin-top: 30px;
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    transition: background 0.3s;
-}
-
-/* Mode Gelap untuk Container */
-.dark-mode .container {
-    background: #333;
-}
-
-/* Tombol */
-button {
-    padding: 12px 20px;
-    font-size: 18px;
-    border: none;
+/* Scroll Progress Bar */
+#scrollProgress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 5px;
     background: #ff5e78;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: transform 0.2s, background 0.3s;
-    margin: 10px;
+    z-index: 9999;
 }
 
-button:hover {
-    background: #ff385c;
+/* Quote Section */
+.quote-section {
+    background: #ffdde1;
+    padding: 30px;
+    font-size: 20px;
+    font-style: italic;
+}
+
+/* Gallery */
+.gallery-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.gallery-img {
+    width: 200px;
+    height: auto;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.gallery-img:hover {
     transform: scale(1.1);
 }
 
-/* Animasi Tombol */
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
-button {
-    animation: bounce 2s infinite;
-}
-
-/* Toast Notification */
-.toast {
-    visibility: hidden;
-    min-width: 250px;
-    background-color: #333;
-    color: white;
-    text-align: center;
-    border-radius: 5px;
-    padding: 10px;
+/* Lightbox */
+#lightbox {
+    display: none;
     position: fixed;
-    left: 50%;
-    bottom: 30px;
-    transform: translateX(-50%);
-    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
 }
 
-.toast.show {
-    visibility: visible;
-    animation: fadeInOut 3s;
+.lightbox-content {
+    width: 50%;
 }
 
-/* Animasi */
-@keyframes fadeInOut {
-    0%, 100% { opacity: 0; }
-    10%, 90% { opacity: 1; }
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* WhatsApp Floating Button */
+.wa-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 20px;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
