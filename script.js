@@ -1,16 +1,24 @@
-// Scroll Progress Bar
-window.addEventListener("scroll", function () {
-    let scrollTop = document.documentElement.scrollTop;
-    let scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    let progress = (scrollTop / scrollHeight) * 100;
-    document.getElementById("scrollProgress").style.width = progress + "%";
+// Mode Gelap/Terang
+document.getElementById("toggleMode").addEventListener("click", function () {
+    document.body.classList.toggle("dark-mode");
 });
 
-// Countdown Timer (Hitung Mundur Tahun Baru)
+// Ganti Warna Acak
+document.getElementById("changeColor").addEventListener("click", function () {
+    const colors = ["red", "green", "blue", "purple", "yellow"];
+    document.body.style.background = colors[Math.floor(Math.random() * colors.length)];
+});
+
+// Konfeti 🎉
+document.getElementById("confettiButton").addEventListener("click", function () {
+    alert("🎉 Boom! Konfeti dimulai!");
+});
+
+// Countdown Timer (Hitung Mundur Turnamen)
 function updateCountdown() {
+    const eventDate = new Date("2025-12-31 23:59:59");
     const now = new Date();
-    const nextYear = new Date(now.getFullYear() + 1, 0, 1);
-    const diff = nextYear - now;
+    const diff = eventDate - now;
 
     const days = Math.floor(diff / (1000 * 60 * 60 * 24));
     const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
@@ -21,27 +29,13 @@ function updateCountdown() {
 }
 setInterval(updateCountdown, 1000);
 
-// To-Do List
-document.getElementById("addTodo").addEventListener("click", function () {
-    const task = document.getElementById("todoInput").value;
-    if (task.trim() === "") return;
-
-    const li = document.createElement("li");
-    li.textContent = task;
-
-    li.addEventListener("click", function () {
-        this.remove();
-    });
-
-    document.getElementById("todoList").appendChild(li);
-    document.getElementById("todoInput").value = "";
-});
-
-// Text-to-Speech
-document.getElementById("speakButton").addEventListener("click", function () {
-    const text = document.getElementById("textToRead").value;
-    if (text.trim() === "") return;
-
-    const utterance = new SpeechSynthesisUtterance(text);
-    window.speechSynthesis.speak(utterance);
+// Game Tebak Angka
+let randomNumber = Math.floor(Math.random() * 10) + 1;
+document.getElementById("checkGuess").addEventListener("click", function () {
+    let userGuess = document.getElementById("guessInput").value;
+    if (userGuess == randomNumber) {
+        document.getElementById("resultMessage").textContent = "🎉 Selamat! Angka Benar!";
+    } else {
+        document.getElementById("resultMessage").textContent = "❌ Salah! Coba Lagi.";
+    }
 });
