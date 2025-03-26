@@ -22,9 +22,9 @@ body {
     color: white;
 }
 
-/* Header */
+/* Header dengan Gambar dari Unsplash */
 header {
-    background: url('images/header.jpg') no-repeat center center/cover;
+    background: url('https://source.unsplash.com/1600x600/?nature,technology') no-repeat center center/cover;
     padding: 60px;
     color: white;
     font-size: 26px;
