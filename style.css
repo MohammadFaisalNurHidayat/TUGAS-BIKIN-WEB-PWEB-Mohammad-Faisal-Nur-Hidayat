@@ -1,96 +1,87 @@
-/* Background Futuristik */
 body {
-    background: url('https://wallpaperaccess.com/full/767277.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color: white;
     font-family: 'Poppins', sans-serif;
-    text-align: center;
     margin: 0;
     padding: 0;
+    background: linear-gradient(135deg, #0a0f1a, #1f2a44);
+    color: #fff;
+    text-align: center;
 }
 
-/* Container */
-.container {
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.8);
-    border-radius: 15px;
-    box-shadow: 0px 5px 15px rgba(0, 255, 255, 0.5);
-}
-
-/* Header */
 header {
-    padding: 20px;
-}
-
-.glow-text {
-    font-size: 36px;
-    text-shadow: 0 0 10px cyan, 0 0 20px blue;
-}
-
-/* Tombol */
-.buttons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin: 20px;
-}
-
-button {
-    padding: 12px 20px;
-    border: none;
-    font-size: 16px;
-    background: linear-gradient(90deg, cyan, blue);
-    color: white;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-button:hover {
-    transform: scale(1.1);
-    background: linear-gradient(90deg, blue, cyan);
-}
-
-/* Countdown */
-.countdown, .game-section, .leaderboard, .gallery {
-    background: rgba(0, 0, 0, 0.7);
-    padding: 20px;
-    border-radius: 10px;
-    margin: 20px 0;
-}
-
-/* Gallery */
-.gallery-container {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.gallery-img {
-    width: 200px;
-    height: auto;
-    cursor: pointer;
-    border-radius: 10px;
-    transition: transform 0.3s;
-}
-
-.gallery-img:hover {
-    transform: scale(1.1);
-}
-
-/* Floating Chat */
-.chat-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #25D366;
-    color: white;
+    background: #162447;
     padding: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.hero-list h2, .hero-info h2 {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #f8c018;
+}
+
+.hero-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.hero-card {
+    background: #1b1f2f;
+    border-radius: 10px;
+    padding: 10px;
+    width: 120px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.hero-card img {
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
-    font-size: 20px;
+    object-fit: cover;
+    border: 3px solid #f8c018;
+}
+
+.hero-card p {
+    margin: 10px 0 0;
+    font-weight: 600;
+}
+
+.hero-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(248, 192, 24, 0.6);
+}
+
+.hero-info {
+    margin-top: 30px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+#youtube-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background: #f8c018;
+    color: #000;
     text-decoration: none;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+#youtube-link:hover {
+    background: #ffdb4d;
 }
