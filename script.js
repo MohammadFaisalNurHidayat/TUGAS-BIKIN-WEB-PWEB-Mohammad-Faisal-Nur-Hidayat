@@ -1,41 +1,60 @@
-// Mode Gelap/Terang
-document.getElementById("toggleMode").addEventListener("click", function () {
-    document.body.classList.toggle("dark-mode");
-});
-
-// Ganti Warna Acak
-document.getElementById("changeColor").addEventListener("click", function () {
-    const colors = ["#ff5733", "#33ff57", "#3357ff", "#ff33a8", "#33fff0"];
-    document.body.style.background = colors[Math.floor(Math.random() * colors.length)];
-});
-
-// Konfeti 🎉
-document.getElementById("confettiButton").addEventListener("click", function () {
-    alert("🎉 Boom! Konfeti dimulai!");
-});
-
-// Countdown Timer (Hitung Mundur Turnamen)
-function updateCountdown() {
-    const eventDate = new Date("2025-12-31 23:59:59");
-    const now = new Date();
-    const diff = eventDate - now;
-
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((diff / (1000 * 60)) % 60);
-    const seconds = Math.floor((diff / 1000) % 60);
-
-    document.getElementById("countdownTimer").textContent = `${days} Hari ${hours}:${minutes}:${seconds}`;
-}
-setInterval(updateCountdown, 1000);
-
-// Game Tebak Angka
-let randomNumber = Math.floor(Math.random() * 10) + 1;
-document.getElementById("checkGuess").addEventListener("click", function () {
-    let userGuess = document.getElementById("guessInput").value;
-    if (userGuess == randomNumber) {
-        document.getElementById("resultMessage").textContent = "🎉 Selamat! Angka Benar!";
-    } else {
-        document.getElementById("resultMessage").textContent = "❌ Salah! Coba Lagi.";
+const heroData = {
+    "Joy": {
+        role: "Midlane",
+        tier: "S+",
+        meta: "Pick or Ban",
+        description: "Joy adalah hero assassin dengan mobilitas tinggi dan damage magic yang besar.",
+        youtube: "https://youtu.be/0i2lbiJYfJg"
+    },
+    "Hayabusa": {
+        role: "Jungle",
+        tier: "S+",
+        meta: "Pick or Ban",
+        description: "Hayabusa adalah assassin dengan skill bayangan yang lincah dan burst damage tinggi.",
+        youtube: "https://youtu.be/p9XTnLcoZmU"
+    },
+    "Granger": {
+        role: "Gold Lane",
+        tier: "S+",
+        meta: "Pick or Ban",
+        description: "Granger adalah marksman dengan critical damage tinggi dan kemampuan burst yang luar biasa.",
+        youtube: "https://youtu.be/g35JidIUk00"
+    },
+    "Fanny": {
+        role: "Jungle",
+        tier: "S+",
+        meta: "Pick or Ban",
+        description: "Fanny adalah assassin dengan kabel yang mematikan dan sangat sulit dikuasai.",
+        youtube: "https://youtu.be/zoz27TwEf8A"
+    },
+    "Gatotkaca": {
+        role: "Roam / EXP Lane",
+        tier: "S",
+        meta: "Meta Pick",
+        description: "Gatotkaca adalah tank yang kuat dengan efek crowd control yang baik.",
+        youtube: "https://youtu.be/9GeljaFfA3M"
+    },
+    "Julian": {
+        role: "Jungle",
+        tier: "S+",
+        meta: "Pick or Ban",
+        description: "Julian adalah fighter-mage hybrid yang memiliki berbagai kombinasi skill unik.",
+        youtube: "https://youtu.be/bZsDau0G-pk"
     }
-});
+};
+
+function showHeroInfo(hero) {
+    const heroDescription = document.getElementById("hero-description");
+    const youtubeLink = document.getElementById("youtube-link");
+
+    heroDescription.innerHTML = `
+        <h3>${hero}</h3>
+        <p><strong>Role:</strong> ${heroData[hero].role}</p>
+        <p><strong>Tier:</strong> ${heroData[hero].tier}</p>
+        <p><strong>Status Meta:</strong> ${heroData[hero].meta}</p>
+        <p>${heroData[hero].description}</p>
+    `;
+    
+    youtubeLink.href = heroData[hero].youtube;
+    youtubeLink.classList.remove("hidden");
+}
