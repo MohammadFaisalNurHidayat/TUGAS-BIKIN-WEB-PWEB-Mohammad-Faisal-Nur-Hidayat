@@ -3,55 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Zone 🎮</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>MLBB Hero Guide</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1 class="glow-text">🎮 Game Zone 🎮</h1>
-            <p id="clock">⏳ 00:00:00</p>
-        </header>
+    <header>
+        <h1>Mobile Legends Hero Guide</h1>
+    </header>
 
-        <div class="buttons">
-            <button id="toggleMode">🌙 Mode Gelap</button>
-            <button id="changeColor">🎨 Ganti Warna</button>
-            <button id="confettiButton">🎉 Konfeti!</button>
-        </div>
-
-        <section class="countdown">
-            <h2>⏳ Hitung Mundur Turnamen</h2>
-            <p id="countdownTimer">00 Hari 00:00:00</p>
-        </section>
-
-        <section class="game-section">
-            <h2>🎯 Game Tebak Angka</h2>
-            <input type="number" id="guessInput" min="1" max="10">
-            <button id="checkGuess">Tebak!</button>
-            <p id="resultMessage"></p>
-        </section>
-
-        <section class="leaderboard">
-            <h2>🏆 Leaderboard</h2>
-            <ul id="leaderboardList">
-                <li>🎖️ Player1 - 100pts</li>
-                <li>🎖️ Player2 - 80pts</li>
-                <li>🎖️ Player3 - 60pts</li>
-            </ul>
-        </section>
-
-        <section class="gallery">
-            <h2>🖼️ Galeri Game</h2>
-            <div class="gallery-container">
-                <img src="https://wallpaperaccess.com/full/467184.jpg" class="gallery-img" alt="Game Wallpaper">
-                <img src="https://wallpaperaccess.com/full/1121161.jpg" class="gallery-img" alt="Esports Wallpaper">
-                <img src="https://wallpaperaccess.com/full/343672.jpg" class="gallery-img" alt="Gaming Setup">
+    <main>
+        <section class="hero-list">
+            <h2>Pilih Hero:</h2>
+            <div class="hero-container">
+                <div class="hero-card" onclick="showHeroInfo('Joy')">
+                    <img src="images/joy.jpg" alt="Joy">
+                    <p>Joy</p>
+                </div>
+                <div class="hero-card" onclick="showHeroInfo('Hayabusa')">
+                    <img src="images/hayabusa.jpg" alt="Hayabusa">
+                    <p>Hayabusa</p>
+                </div>
+                <div class="hero-card" onclick="showHeroInfo('Granger')">
+                    <img src="images/granger.jpg" alt="Granger">
+                    <p>Granger</p>
+                </div>
+                <div class="hero-card" onclick="showHeroInfo('Fanny')">
+                    <img src="images/fanny.jpg" alt="Fanny">
+                    <p>Fanny</p>
+                </div>
+                <div class="hero-card" onclick="showHeroInfo('Gatotkaca')">
+                    <img src="images/gatotkaca.jpg" alt="Gatotkaca">
+                    <p>Gatotkaca</p>
+                </div>
+                <div class="hero-card" onclick="showHeroInfo('Julian')">
+                    <img src="images/julian.jpg" alt="Julian">
+                    <p>Julian</p>
+                </div>
             </div>
         </section>
 
-        <a href="https://wa.me/6281234567890" class="chat-button" target="_blank">💬 Chat Support</a>
-    </div>
-
-    <script src="script.js"></script>
+        <section class="hero-info">
+            <h2>Detail Hero</h2>
+            <div id="hero-description">
+                <p>Klik hero untuk melihat deskripsinya.</p>
+            </div>
+            <a id="youtube-link" href="#" target="_blank" class="hidden">Lihat Tutorial</a>
+        </section>
+    </main>
 </body>
 </html>
