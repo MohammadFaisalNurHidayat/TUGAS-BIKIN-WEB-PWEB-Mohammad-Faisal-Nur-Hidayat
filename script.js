@@ -1,6 +1,6 @@
 const heroData = {
     "Joy": {
-        role: "Midlane",
+        role: "Jungle",
         tier: "S+",
         meta: "Pick or Ban",
         description: "Joy adalah hero assassin dengan mobilitas tinggi dan damage magic yang besar.",
