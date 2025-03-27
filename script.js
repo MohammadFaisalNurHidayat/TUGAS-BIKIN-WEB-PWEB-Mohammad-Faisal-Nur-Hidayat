@@ -5,7 +5,7 @@ document.getElementById("toggleMode").addEventListener("click", function () {
 
 // Ganti Warna Acak
 document.getElementById("changeColor").addEventListener("click", function () {
-    const colors = ["red", "green", "blue", "purple", "yellow"];
+    const colors = ["#ff5733", "#33ff57", "#3357ff", "#ff33a8", "#33fff0"];
     document.body.style.background = colors[Math.floor(Math.random() * colors.length)];
 });
 
