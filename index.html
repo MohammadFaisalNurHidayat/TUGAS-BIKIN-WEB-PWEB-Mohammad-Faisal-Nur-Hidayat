@@ -7,49 +7,50 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="scrollProgress"></div>
+    <div class="container">
+        <header>
+            <h1 class="glow-text">🎮 Game Zone 🎮</h1>
+            <p id="clock">⏳ 00:00:00</p>
+        </header>
 
-    <header>
-        <h1 class="glowing-text">🎮 Game Zone 🎮</h1>
-        <p id="clock">⏳ 00:00:00</p>
-    </header>
-
-    <button id="toggleMode">🌙 Mode Gelap</button>
-    <button id="changeColor">🎨 Ganti Warna</button>
-    <button id="confettiButton">🎉 Konfeti!</button>
-
-    <section class="countdown">
-        <h2>⏳ Hitung Mundur Turnamen</h2>
-        <p id="countdownTimer">00 Hari 00:00:00</p>
-    </section>
-
-    <section class="game-section">
-        <h2>🎯 Game Tebak Angka</h2>
-        <p>Tebak angka antara 1-10</p>
-        <input type="number" id="guessInput" min="1" max="10">
-        <button id="checkGuess">Tebak!</button>
-        <p id="resultMessage"></p>
-    </section>
-
-    <section class="leaderboard">
-        <h2>🏆 Leaderboard</h2>
-        <ul id="leaderboardList">
-            <li>🎖️ Player1 - 100pts</li>
-            <li>🎖️ Player2 - 80pts</li>
-            <li>🎖️ Player3 - 60pts</li>
-        </ul>
-    </section>
-
-    <section class="gallery">
-        <h2>🖼️ Galeri Game</h2>
-        <div class="gallery-container">
-            <img src="https://wallpaperaccess.com/full/467184.jpg" class="gallery-img" alt="Game Wallpaper">
-            <img src="https://wallpaperaccess.com/full/1121161.jpg" class="gallery-img" alt="Esports Wallpaper">
-            <img src="https://wallpaperaccess.com/full/343672.jpg" class="gallery-img" alt="Gaming Setup">
+        <div class="buttons">
+            <button id="toggleMode">🌙 Mode Gelap</button>
+            <button id="changeColor">🎨 Ganti Warna</button>
+            <button id="confettiButton">🎉 Konfeti!</button>
         </div>
-    </section>
 
-    <a href="https://wa.me/6281234567890" class="chat-button" target="_blank">💬 Chat Support</a>
+        <section class="countdown">
+            <h2>⏳ Hitung Mundur Turnamen</h2>
+            <p id="countdownTimer">00 Hari 00:00:00</p>
+        </section>
+
+        <section class="game-section">
+            <h2>🎯 Game Tebak Angka</h2>
+            <input type="number" id="guessInput" min="1" max="10">
+            <button id="checkGuess">Tebak!</button>
+            <p id="resultMessage"></p>
+        </section>
+
+        <section class="leaderboard">
+            <h2>🏆 Leaderboard</h2>
+            <ul id="leaderboardList">
+                <li>🎖️ Player1 - 100pts</li>
+                <li>🎖️ Player2 - 80pts</li>
+                <li>🎖️ Player3 - 60pts</li>
+            </ul>
+        </section>
+
+        <section class="gallery">
+            <h2>🖼️ Galeri Game</h2>
+            <div class="gallery-container">
+                <img src="https://wallpaperaccess.com/full/467184.jpg" class="gallery-img" alt="Game Wallpaper">
+                <img src="https://wallpaperaccess.com/full/1121161.jpg" class="gallery-img" alt="Esports Wallpaper">
+                <img src="https://wallpaperaccess.com/full/343672.jpg" class="gallery-img" alt="Gaming Setup">
+            </div>
+        </section>
+
+        <a href="https://wa.me/6281234567890" class="chat-button" target="_blank">💬 Chat Support</a>
+    </div>
 
     <script src="script.js"></script>
 </body>
