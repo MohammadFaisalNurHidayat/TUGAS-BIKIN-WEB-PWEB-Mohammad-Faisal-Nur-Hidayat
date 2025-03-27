@@ -1,35 +1,49 @@
-/* Tema Neon */
+/* Background Futuristik */
 body {
-    background: linear-gradient(120deg, #1e1e2e, #252541);
+    background: url('https://wallpaperaccess.com/full/767277.jpg') no-repeat center center fixed;
+    background-size: cover;
     color: white;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
     text-align: center;
     margin: 0;
     padding: 0;
 }
 
+/* Container */
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 255, 255, 0.5);
+}
+
 /* Header */
 header {
     padding: 20px;
-    background: rgba(0, 0, 0, 0.6);
-    box-shadow: 0px 5px 15px rgba(0, 255, 255, 0.3);
 }
 
-/* Teks Glow */
-.glowing-text {
+.glow-text {
     font-size: 36px;
-    text-shadow: 0 0 5px cyan, 0 0 10px cyan, 0 0 20px blue;
+    text-shadow: 0 0 10px cyan, 0 0 20px blue;
 }
 
 /* Tombol */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px;
+}
+
 button {
-    padding: 10px 20px;
-    margin: 10px;
+    padding: 12px 20px;
     border: none;
     font-size: 16px;
     background: linear-gradient(90deg, cyan, blue);
     color: white;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
     transition: 0.3s;
 }
@@ -40,39 +54,11 @@ button:hover {
 }
 
 /* Countdown */
-.countdown {
+.countdown, .game-section, .leaderboard, .gallery {
     background: rgba(0, 0, 0, 0.7);
     padding: 20px;
     border-radius: 10px;
-    margin: 20px;
-}
-
-/* Game Section */
-.game-section {
-    background: rgba(0, 0, 0, 0.7);
-    padding: 20px;
-    border-radius: 10px;
-    margin: 20px;
-}
-
-/* Leaderboard */
-.leaderboard {
-    background: rgba(0, 0, 0, 0.7);
-    padding: 20px;
-    border-radius: 10px;
-    margin: 20px;
-}
-
-.leaderboard ul {
-    list-style: none;
-    padding: 0;
-}
-
-.leaderboard li {
-    background: rgba(0, 255, 255, 0.2);
-    padding: 10px;
-    margin: 5px;
-    border-radius: 5px;
+    margin: 20px 0;
 }
 
 /* Gallery */
